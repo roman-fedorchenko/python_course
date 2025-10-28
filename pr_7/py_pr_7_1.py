@@ -1,3 +1,4 @@
+
 import sys
 
 def Open(file_name, mode):
