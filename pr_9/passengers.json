@@ -1,0 +1,52 @@
+[
+    {
+        "surname": "Petrenko",
+        "items_count": 3,
+        "weight_kg": 20.5
+    },
+    {
+        "surname": "Ivanov",
+        "items_count": 1,
+        "weight_kg": 4.0
+    },
+    {
+        "surname": "Sydorenko",
+        "items_count": 2,
+        "weight_kg": 15.0
+    },
+    {
+        "surname": "Kovalenko",
+        "items_count": 4,
+        "weight_kg": 32.0
+    },
+    {
+        "surname": "Bondar",
+        "items_count": 1,
+        "weight_kg": 3.5
+    },
+    {
+        "surname": "Tkachenko",
+        "items_count": 3,
+        "weight_kg": 26.5
+    },
+    {
+        "surname": "Shevchenko",
+        "items_count": 2,
+        "weight_kg": 12.0
+    },
+    {
+        "surname": "Melnyk",
+        "items_count": 5,
+        "weight_kg": 45.0
+    },
+    {
+        "surname": "Boyko",
+        "items_count": 1,
+        "weight_kg": 10.0
+    },
+    {
+        "surname": "Moroz",
+        "items_count": 2,
+        "weight_kg": 25.0
+    }
+]
