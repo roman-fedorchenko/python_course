@@ -26,22 +26,22 @@ def generate_data(n):
 raw_data = generate_data(20)
 df = pd.DataFrame(raw_data)
 
-print(f"1. Вміст DataFrame (перші {pr} рядки)")
+print(f"1. DataFrame content (first {pr} rows)")
 print("-"*100)
 print(df.head(pr))
 print("-"*100)
 
-print("\n2. Типи даних")
+print("\n2. Data types")
 print("-"*100)
 print(df.dtypes)
 print("-"*100)
 
-print("\n3. Розмірність (рядки, стовпці)")
+print("\n3. Dimension (rows, columns)")
 print("-"*100)
 print(df.shape)
 print("-"*100)
 
-print("\n4. Описова статистика")
+print("\n4. Descriptive statistics")
 print("-"*100)
 print(df.describe())
 print("-"*100)
@@ -50,38 +50,38 @@ print("-"*100)
 df['Cost_Per_Kg'] = 50
 df['Total_Cost_UAH'] = (df['Total_Weight_kg'] * df['Cost_Per_Kg']) + 100
 
-print(f"\n5. Додано стовпець вартості (перші {pr} рядки)")
+print(f"\n5. Added cost column (first {pr} rows)")
 print("-"*100)
 print(df[['Passenger', 'Total_Weight_kg', 'Total_Cost_UAH']].head(pr))
 print("-"*100)
 
 # Фільтрація даних за вартістю >2000
 expensive_luggage = df[df['Total_Cost_UAH'] > 2000]
-print(f"\n6. Фільтрація (вартість > 2000 грн): знайдено {len(expensive_luggage)} записів")
+print(f"\n6. Filtering (cost > 2000 UAH): {len(expensive_luggage)} records found")
 print("-"*100)
 print(expensive_luggage)
 print("-"*100)
 
 # Сортування даниз за вагою
 sorted_df = df.sort_values(by='Total_Weight_kg', ascending=False)
-print("\n7. Топ-3 пасажири з найважчим багажем")
+print("\n7. Top 3 passengers with the heaviest luggage")
 print("-"*100)
 print(sorted_df.head(3))
 print("-"*100)
 
 # Групування та агрегація даних за категоріями
 grouped = df.groupby('Category')['Total_Weight_kg'].mean()
-print("\n8. Середня вага багажу по категоріях")
+print("\n8. Average baggage weight by category")
 print("-"*100)
 print(grouped)
 print("-"*100)
 
 # Додаткова агрегація
 agg_stats = df.groupby('Category').agg({
-    'Total_Cost_UAH': ['max', 'sum'],  # Максимальна та сумарна вартість
-    'Passenger': 'count'            # Кількість пасажирів
+    'Total_Cost_UAH': ['max', 'sum'],   # Максимальна та сумарна вартість
+    'Passenger': 'count'                # Кількість пасажирів
 })
-print("\n9. Розширена статистика по категоріях")
+print("\n9. Advanced statistics by category")
 print("-"*100)
 print(agg_stats)
 print("-"*100)
