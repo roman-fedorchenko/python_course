@@ -31,7 +31,6 @@ matching_passengers = [
     if all(abs(w - avg_weight) <= 0.5 for w in weights)
 ]
 
-
 if matching_passengers:
     print(f"в) Номери багажів, де вага речей ≈ середній ({avg_weight:.2f} кг):")
     for p in matching_passengers:
