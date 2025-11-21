@@ -38,10 +38,7 @@ try:
 # Додаємо специфічні символи
     custom_filters = stop_words.union(punctuation).union({'--', '."', ',"', "''", "``"})
 # Фільтрація
-    filtered_words = [
-        w.lower() for w in words 
-        if w.lower() not in custom_filters and w.isalpha()
-    ]
+    filtered_words = [w.lower() for w in words if w.lower() not in custom_filters and w.isalpha()]
     print(f"\nNumber of words after cleaning: {len(filtered_words)}")
 # Після очищення
     fdist_clean = FreqDist(filtered_words)

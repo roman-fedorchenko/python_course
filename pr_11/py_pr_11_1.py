@@ -1,30 +1,42 @@
 import pandas as pd
 import numpy as np
 import random
-
+#примітка: спрочатку створити словник, а потім вже dataframe
 # Перемінна для конторолю виводу
 pr=8
 
-# Генерація даних (як у Практичній №5)
-def generate_data(n):
-    data = []
+# Генерація даних
+def generate_data_dict(n):
+# Ініціалізуємо словник, де ключі — це майбутні колонки
+    data = {
+        "Passenger": [],
+        "Items_Count": [],
+        "Total_Weight_kg": [],
+        "Category": []
+    }
+    
     for i in range(1, n + 1):
-# Генеруємо кількість речей (1-5) та їх вагу
+# Генеруємо дані (так само як і раніше)
         items_count = random.randint(1, 5)
         weights = [round(random.uniform(5, 20), 1) for _ in range(items_count)]
-        total_weight = sum(weights) 
-# Додаємо запис у список
-        data.append({
-            "Passenger": f"Pass_{i}",
-            "Items_Count": items_count,
-            "Total_Weight_kg": round(total_weight, 2),
-            "Category": random.choice(["Economy", "Business", "VIP"]) # Додаткова характеристика
-        })
+        total_weight = sum(weights)
+        category = random.choice(["Economy", "Business", "VIP"])
+# Додаємо дані у відповідні списки всередині словника
+        data["Passenger"].append(f"Pass_{i}")
+        data["Items_Count"].append(items_count)
+        data["Total_Weight_kg"].append(round(total_weight, 2))
+        data["Category"].append(category)
+        
     return data
 
-# Створюємо DataFrame
-raw_data = generate_data(20)
-df = pd.DataFrame(raw_data)
+# Генеруємо словник
+raw_data_dict = generate_data_dict(2000)
+
+# Перевіримо, як виглядає словник (для наочності)
+# print(raw_data_dict) 
+
+# Створюємо DataFrame зі словника
+df = pd.DataFrame(raw_data_dict)
 
 print(f"1. DataFrame content (first {pr} rows)")
 print("-"*100)
